@@ -308,7 +308,7 @@ body {
 }
 
 .service {
-  min-height: 300px;
+  height: 300px;
 }
 
 .service-text {
