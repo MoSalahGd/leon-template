@@ -48,9 +48,10 @@ body {
     padding: 0;
   }
 
-  .services .flex-container {
+  .services .service {
     display: flex;
     text-align: left;
+    gap: 25px;
   }
 
   .section-header h2 {
@@ -61,8 +62,8 @@ body {
     margin-top: -28px !important;
   }
 
-  .service {
-    min-height: 250px !important;
+  .service h3 {
+    margin-top: 0 !important;
   }
 
   .contact-info > p {
@@ -76,10 +77,6 @@ body {
   }
   .features .container > div {
     margin-bottom: 0 !important;
-  }
-
-  .service {
-    min-height: 200px !important;
   }
 
   .about .container {
@@ -114,9 +111,6 @@ body {
 
   .right-banner {
     display: block !important;
-  }
-  .service {
-    min-height: 250px !important;
   }
 
   .about-text {
@@ -156,7 +150,6 @@ body {
 }
 
 .icon {
-  display: block;
   width: 30px;
   height: 20px;
   display: flex;
@@ -167,7 +160,6 @@ body {
 .icon span {
   background-color: black;
   height: 2px;
-  display: block;
 }
 
 .icon span:nth-child(2) {
@@ -177,20 +169,20 @@ body {
 }
 
 .navigation-menu {
+  width: 200px;
   display: none;
   position: absolute;
-  top: 40px;
-  left: -150px;
+  top: calc(100% + 15px);
+  right: 0;
   background-color: #f6f6f6;
   z-index: 1;
 }
 
 .navigation-menu:after {
   content: "";
-  background-color: transparent;
   position: absolute;
   top: -20px;
-  right: 0;
+  right: 5px;
   border-width: 10px;
   border-style: solid;
   border-color: transparent transparent #f6f6f6 transparent;
@@ -203,13 +195,12 @@ body {
 .navigation-menu a {
   display: block;
   color: black;
-  padding: 1.2em 6.5em 1.2em 0.7em;
+  padding: 1.2em;
   transition: var(--main-duration);
 }
 
 .navigation-menu a:hover {
-  padding-left: 1.3em;
-  padding-right: 5.9em;
+  padding-left: 1.7em;
 }
 /* -------------------------------- */
 /* landing section */
@@ -218,7 +209,6 @@ body {
   height: calc(100vh - 64px);
   background-image: url("../images/landing.jpg");
   background-size: cover;
-  background-position: center left;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,7 +224,7 @@ body {
   margin: 0;
   color: var(--main-color);
   font-size: 3rem;
-  margin-bottom: 0.6em;
+  margin-bottom: 0.4em;
   font-weight: bolder;
 }
 
@@ -253,28 +243,27 @@ body {
 .features .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
 
-.features .container > :not(:last-child) {
-  margin-bottom: 80px;
+.features .feature {
+  padding: 20px;
 }
 
-.fa-x3 {
+i {
   color: var(--main-color);
-  font-size: 3rem;
-  margin-bottom: 0.7em;
 }
 
 .feature h3 {
   text-transform: capitalize;
   font-size: 1.3rem;
-  margin-bottom: 1.2em;
+  margin: 1.5em 0;
+  font-weight: 800px;
 }
 
 .features p {
   color: rgba(0, 0, 0, 0.5);
   line-height: 1.6;
-  padding: 0 20px;
 }
 /* ------------------------------ */
 /* services section */
@@ -290,7 +279,7 @@ body {
 
 .section-header h2 {
   font-size: 3.7rem;
-  font-weight: 900;
+  font-weight: 800;
   color: #ebeced;
   letter-spacing: -3px;
 }
@@ -305,26 +294,23 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   text-align: center;
+  grid-row-gap: 50px;
+}
+
+.services .container > :not(:last-child) {
+  display: grid;
+  grid-gap: 50px;
 }
 
 .service {
-  height: 300px;
-}
-
-.service-text {
-  padding: 0 30px;
-}
-
-.fa-x2 {
-  color: var(--main-color);
-  font-size: 2rem;
-  margin-bottom: 1em;
+  padding: 20px;
 }
 
 .service h3 {
   text-transform: capitalize;
   font-size: 1.2rem;
-  margin-bottom: 1.3em;
+  margin: 1.3em 0;
+  font-weight: 800;
 }
 
 .service p {
@@ -336,27 +322,22 @@ body {
   display: none;
 }
 .services-img-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
   position: relative;
 }
 
 .column img {
-  width: 70%;
-  height: 450px;
-  z-index: 1;
+  width: 260px;
 }
 
 .services-img-container:after {
   content: "";
   width: 100px;
-  height: 550px;
+  height: calc(100% + 100px);
   background-color: var(--secondary-color);
   position: absolute;
   top: -50px;
   right: 0;
+  z-index: -1;
 }
 /* ------------------------------ */
 /* portfolio seciton */
@@ -374,13 +355,8 @@ body {
   background-color: white;
 }
 
-.port-card-img {
-  height: 310px;
-}
-
 .port-card-img img {
   width: 100%;
-  height: 100%;
 }
 
 .port-card-content {
@@ -426,14 +402,15 @@ body {
 
 .about-img-container::after {
   content: "";
-  height: 400px;
+  height: 250px;
   width: 100px;
-  background-color: var(--main-color);
   position: absolute;
   top: -50px;
   left: 200px;
   z-index: -1;
   visibility: hidden;
+  border-left: 80px solid var(--main-color);
+  border-bottom: 80px solid var(--main-color);
 }
 
 .about img {
